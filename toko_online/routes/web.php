@@ -12,6 +12,10 @@ Route::post('products', [ProductController::class, 'store']);
 Route::get('products', [ProductController::class, 'index']); 
 Route::post('belis', [BeliController::class, 'store']); 
 Route::get('belis', [BeliController::class, 'index']); 
+Route::get('/products/{id}', [ProductController::class, 'show']);
+Route::get('/users/id/{id}', [UserController::class, 'showById']);
+Route::get('/users/email/{email}', [UserController::class, 'showByEmail']);
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
