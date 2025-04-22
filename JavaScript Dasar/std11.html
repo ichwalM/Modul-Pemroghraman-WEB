@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>std 1</title>
+    <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+</head>
+<body>
+    <div class="container border bg-info">
+        <p class="mb-0"><b>PHP</b> Sedang berulang Tahun</p>
+        <p class="output mb-2"></p>
+        <form action="">
+            <input type="text" placeholder="Komentar.." id="komentar">
+            <p class="live"></p>
+            <button class="border-2" style="background-color: aqua;">Komentar</button>
+        </form>
+    </div>
+    <script>
+        const komentar = document.getElementById('komentar');
+        komentar.addEventListener('input',function(){
+            document.querySelector('.live').innerHTML='Anda Sedang Mengetik...';
+        })
+        const button = document.querySelector('button').addEventListener('click',function(){
+            event.preventDefault();
+            document.querySelector('.output').innerHTML=`<b>Java Script</b> : ${komentar.value}`
+            komentar.value='';
+            document.querySelector('.live').innerHTML='';
+        });
+    </script>
+</body>
+</html>

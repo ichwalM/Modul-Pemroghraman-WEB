@@ -1,0 +1,124 @@
+<html lang="en">
+    <head>
+        <title>Praktikum 1</title>
+        <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+    </head>
+    <body>
+        <div class="container shadow p-3">
+            <form id="biodataForm">
+                <table>
+                    <tr>
+                        <td>NIM</td>
+                        <td>:
+                            <input type="text" id="stb" required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>NAMA </td>
+                        <td>:
+                            <input type="text" id="name" required />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Tanggal Lahir</td>
+                        <td>: <input type="date" id="date"></td>
+                    </tr>
+                    <tr>
+                        <td>Jenis Kelamin</td>
+                        <td>:
+                            <label>
+                                <input name="x" type="radio" value="Laki-laki" id="laki">Laki-laki
+                            </label>
+                            <label>
+                                <input name="x" type="radio" value="Perempuan" id="perempuan" >Perempuan
+                            </label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Agama</td>
+                        <td>:
+                            <select id="agama" required>
+                                <option value="">--Agama--</option>
+                                <option value="islam">Islam</option>
+                                <option value="kristen">Kristen</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Alamat</td>
+                        <td>:
+                            <textarea id="alamat" rows="2"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="acc">Centang untuk menyetujui</label>
+                            <input type="checkbox" name="acc" id="acc">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right" colspan="2">
+
+                            
+                            <button id="submit" type="submit">Submit</button>
+                        </td>
+                    </tr>
+
+                </table>
+            </form>
+            <table class="table text-center table-bordered mt-3">
+                <h3 class="mt-4 text-center">Biodata: </h3>
+                <thead>
+                    <tr>
+                        <th>NIM</th>
+                        <th>NAMA</th>
+                        <th>Tanggal lahir</th>
+                        <th>jenis Kelamin</th>
+                        <th>Agama</th>
+                        <th>Alamat</th>
+                    </tr>
+                </thead>
+                <tbody id="biodataTableBody">
+                </tbody>
+            </table>
+        </div>
+        <script>
+            document.getElementById('submit').addEventListener('click',function(){
+                event.preventDefault();
+                const stb = document.getElementById('stb').value;
+                const name = document.getElementById('name').value;
+                const date = document.getElementById('date').value;
+                const laki = document.getElementById('laki');
+                const perempuan = document.getElementById('perempuan');
+                let jenisKelamin = '';
+                if (laki.checked) {
+                    jenisKelamin = laki.value;
+                } else if (perempuan.checked) {
+                    jenisKelamin = perempuan.value;
+                }
+                const agama = document.getElementById('agama').value;
+                const alamat = document.getElementById('alamat').value;
+                const biodata = document.getElementById('biodataTableBody');
+                function belumChelist(){
+                    return alert("Silahkan di centang");
+                }
+                // const acc = document.getElementById('acc').checked ? console.log("true chechk") : belumChelist();
+                const acc = document.getElementById('acc');
+                if(acc.checked){
+                    const newBiodata = biodata.insertRow();
+                    newBiodata.innerHTML = `<td>${name}</td>
+                                            <td>${stb}</td>
+                                            <td>${date}</td>
+                                            <td>${jenisKelamin}</td>
+                                            <td>${agama}</td>
+                                            <td>${alamat}</td>`;
+                }else{
+                    belumChelist();
+                }
+            })
+        </script>
+    </body>
+</html>
