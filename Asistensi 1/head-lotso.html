@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kepala Boneka Lotso</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: transparent;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #1A1A1A;
+        }
+
+        .lostso {
+            animation: rubberBallBounce 3s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            z-index: 10;
+        }
+
+        @keyframes rubberBallBounce {
+            0% {
+                transform: translateY(-300px) scaleY(1) scaleX(1);
+            }
+            40% {
+                transform: translateY(120px) scaleY(1) scaleX(1);
+            }
+            50% {
+                transform: translateY(150px) scaleY(0.85) scaleX(1.05);
+            }
+            100% {
+                transform: translateY(-300px) scaleY(1) scaleX(1);
+            }
+        }
+
+        .kepala {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+        }
+
+        .telinga-kiri {
+            width: 95px;
+            height: 115px;
+            background: linear-gradient(135deg, #FF76B4 0%, #FF5BA1 30%, #FF4691 60%, #FF2B78 100%);
+            border-radius: 50%;
+            margin-right: -40px;
+            margin-top: 10px;
+            transform: rotate(-25deg);
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset -10px -15px 25px rgba(0,0,0,0.25), 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .telinga-kiri-dalam {
+            width: 65px;
+            height: 75px;
+            background: radial-gradient(circle at 45% 35%, #FFF8F8 0%, #FFE8EC 50%, #FFD5DD 100%);
+            border-radius: 50%;
+            box-shadow: inset 3px 3px 8px rgba(0,0,0,0.15);
+        }
+
+        .kepala-lotso {
+            width: 340px;
+            height: 300px;
+            background: radial-gradient(circle at 35% 25%, #FF88B8 0%, #FF73A8 20%, #FF5BA1 50%, #FF4691 80%, #FF2B78 100%);
+            border-radius: 53% 47% 50% 50%;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 45px;
+            box-sizing: border-box;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3), inset 0 -20px 40px rgba(0,0,0,0.12);
+        }
+
+        .telinga-right {
+            width: 95px;
+            height: 115px;
+            background: linear-gradient(225deg, #FF76B4 0%, #FF5BA1 30%, #FF4691 60%, #FF2B78 100%);
+            border-radius: 50%;
+            margin-left: -40px;
+            margin-top: 10px;
+            transform: rotate(25deg);
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 10px -15px 25px rgba(0,0,0,0.25), 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .telinga-right-dalam {
+            width: 65px;
+            height: 75px;
+            background: radial-gradient(circle at 55% 35%, #FFF8F8 0%, #FFE8EC 50%, #FFD5DD 100%);
+            border-radius: 50%;
+            box-shadow: inset -3px 3px 8px rgba(0,0,0,0.15);
+        }
+
+        .area-mata {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 22px;
+        }
+
+        .alis-ungu {
+            display: flex;
+            gap: 90px;
+            margin-bottom: 15px;
+        }
+
+        .matabrow {
+            width: 68px;
+            height: 25px;
+            background: linear-gradient(to bottom, #7B4287 0%, #684080 60%, #553878 100%);
+            border-radius: 100% 100% 35% 35%;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.15);
+        }
+
+        .matabrow-left {
+            transform: rotate(-12deg);
+        }
+
+        .matabrow-right {
+            transform: rotate(12deg);
+        }
+
+        .mata-container {
+            display: flex;
+            gap: 55px;
+        }
+
+        .mata {
+            width: 52px;
+            height: 56px;
+            background: white;
+            border-radius: 50%;
+            border: 8px solid #FAFAFA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.25);
+        }
+
+        .mata-iris {
+            width: 38px;
+            height: 42px;
+            background: radial-gradient(circle at 35% 25%, #E8B48B 0%, #D2A878 30%, #B8860B 60%, #8B5A2B 90%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.35);
+        }
+
+        .mata-pupil {
+            width: 22px;
+            height: 28px;
+            background: #1A1A1A;
+            border-radius: 50%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 4px;
+        }
+
+        .mata-shine {
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.95;
+        }
+
+        .snout {
+            width: 280px;
+            height: 150px;
+            background: radial-gradient(circle at 50% 20%, #FFFDF8 0%, #FFF9F3 15%, #FFF0E6 40%, #FFEBDD 70%, #F5E6DC 100%);
+            border-radius: 65% 65% 80% 80%;
+            border: 2px solid #E6D5C5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 15px;
+            margin-top: auto;
+            z-index: 3;
+            box-shadow: 0 -6px 15px rgba(0,0,0,0.18), inset 0 8px 15px rgba(255,255,255,0.8);
+        }
+
+        .nose {
+            width: 65px;
+            height: 35px;
+            background: radial-gradient(ellipse at 50% 65%, #FF5D82 0%, #E6335A 55%, #C11B47 100%);
+            border-radius: 50%;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.4), inset 0 -3px 5px rgba(0,0,0,0.45);
+        }
+
+        .nose-dalam {
+            width: 45px;
+            height: 25px;
+            background: radial-gradient(ellipse at 50% 20%, #FF87A5 0%, #FF6B8A 50%, #FF5573 100%);
+            border-radius: 50%;
+            box-shadow: inset 0 3px 6px rgba(0,0,0,0.3);
+        }
+
+        .mulut {
+            width: 130px;
+            height: 25px;
+            border: 4px solid #333;
+            border-top: none;
+            border-radius: 0 0 130px 130px;
+            background: rgba(0,0,0,0.05);
+            margin-top: -5px;
+        }
+
+
+    </style>
+</head>
+<body>    
+    <div class="lostso">
+        <div class="kepala">
+            <!-- Telinga kiri -->
+            <div class="telinga-kiri">
+                <div class="telinga-kiri-dalam"></div>
+            </div>
+            
+            <div class="kepala-lotso">
+                <!-- Area mata dan alis -->
+                <div class="area-mata">
+                    <!-- Alis ungu -->
+                    <div class="alis-ungu">
+                        <div class="matabrow matabrow-left"></div>
+                        <div class="matabrow matabrow-right"></div>
+                    </div>
+                    
+                    <!-- Mata coklat -->
+                    <div class="mata-container">
+                        <div class="mata">
+                            <div class="mata-iris">
+                                <div class="mata-pupil">
+                                    <div class="mata-shine"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mata">
+                            <div class="mata-iris">
+                                <div class="mata-pupil">
+                                    <div class="mata-shine"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!--ini Moncong besar -->
+                <div class="snout">
+                    <!--ini Hidung pink -->
+                    <div class="nose">
+                        <div class="nose-dalam"></div>
+                    </div>
+                    
+                    <!--ini Mulut -->
+                    <div class="mulut"></div>
+                </div>
+            </div>
+            
+            <!-- Telinga kanan -->
+            <div class="telinga-right">
+                <div class="telinga-right-dalam"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
